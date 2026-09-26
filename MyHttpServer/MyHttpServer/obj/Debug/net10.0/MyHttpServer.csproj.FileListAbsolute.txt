@@ -1,0 +1,16 @@
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\MyHttpServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net10.0\MyHttpServer.exe
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net10.0\search.html
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net10.0\settings.json
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net10.0\MyHttpServer.deps.json
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net10.0\MyHttpServer.runtimeconfig.json
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net10.0\MyHttpServer.dll
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\bin\Debug\net10.0\MyHttpServer.pdb
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\MyHttpServer.AssemblyInfoInputs.cache
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\MyHttpServer.AssemblyInfo.cs
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\MyHttpServer.csproj.CoreCompileInputs.cache
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\MyHttpServer.dll
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\refint\MyHttpServer.dll
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\MyHttpServer.pdb
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\MyHttpServer.genruntimeconfig.cache
+C:\Users\kamil\RiderProjects\MyHttpServer\MyHttpServer\obj\Debug\net10.0\ref\MyHttpServer.dll
