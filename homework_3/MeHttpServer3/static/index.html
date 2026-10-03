@@ -1,0 +1,721 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Войти — Steam Community</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #171a21;
+            color: #c6d4df;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        a {
+            color: #c6d4df;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+
+        .header {
+            height: 104px;
+            background: #171a21;
+        }
+
+        .header-inner {
+            width: 940px;
+            max-width: 94%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .steam-logo {
+            width: 145px;
+            height: 44px;
+            object-fit: contain;
+            margin-right: 60px;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            white-space: nowrap;
+        }
+
+        .navigation a {
+            color: #dcdedf;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .navigation a.active {
+            color: #1a9fff;
+            border-bottom: 2px solid #1a9fff;
+            padding-bottom: 1px;
+        }
+
+        .header-right {
+            margin-left: auto;
+            align-self: flex-start;
+            padding-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            font-size: 11px;
+        }
+
+        .install-button {
+            background: #5c7e10;
+            color: #fff;
+            padding: 5px 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .install-button img.btn-icon {
+            height: 16px;
+            width: auto;
+            display: block;
+        }
+
+        .header-right a:not(.install-button) {
+            color: #b8b6b4;
+        }
+
+        .login-background {
+            height: 660px;
+            background-color: #1b2838;
+            background-image:
+                    linear-gradient(rgba(15, 19, 29, 0.87), rgba(15, 19, 29, 0%)),
+                    url("https://community.fastly.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg");
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 92px;
+        }
+
+        .login-wrap {
+            width: 812px;
+            max-width: 94%;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            margin: 0 0 42px 16px;
+            color: #ffffff;
+            font-size: 28px;
+            line-height: 34px;
+            font-weight: bold;
+        }
+
+        .login-card {
+            min-height: 338px;
+            padding: 34px 32px 26px;
+            background: #181a21;
+            border-radius: 3px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .login-form {
+            width: 512px;
+            flex-shrink: 1;
+        }
+
+        .small-title {
+            color: #1999e8;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .field {
+            margin-bottom: 14px;
+        }
+
+        .field label {
+            display: block;
+            color: #b8b6b4;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .field input {
+            width: 100%;
+            height: 39px;
+            border: 1px solid #32353c;
+            border-radius: 2px;
+            outline: none;
+            background: #32353c;
+            color: #ffffff;
+            padding: 8px 10px;
+            font-size: 16px;
+        }
+
+        .field input:focus {
+            border-color: #66c0f4;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 4px;
+            color: #b8b6b4;
+            font-size: 12px;
+        }
+
+        .remember input {
+            width: 19px;
+            height: 19px;
+            margin: 0;
+            accent-color: #66c0f4;
+        }
+
+        .login-button {
+            display: block;
+            width: 270px;
+            height: 47px;
+            margin: 12px auto 42px;
+            border: 0;
+            border-radius: 2px;
+            color: #ffffff;
+            font-size: 16px;
+            background: linear-gradient(90deg, #06bfff, #2b74ff);
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            filter: brightness(1.12);
+        }
+
+        .help-link {
+            display: block;
+            text-align: center;
+            color: #b8b6b4;
+            text-decoration: underline;
+            font-size: 12px;
+        }
+
+        .qr-section {
+            width: 200px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qr-title {
+            color: #1999e8;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            align-self: flex-start;
+        }
+
+        .qr-box {
+            width: 198px;
+            height: 198px;
+            padding: 10px;
+            background: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .real-qr {
+            width: 176px;
+            height: 176px;
+            display: block;
+        }
+
+
+        .fake-qr {
+            width: 176px;
+            height: 176px;
+            background-color: #fff;
+            background-image:
+                    linear-gradient(90deg, #171a21 10px, transparent 10px),
+                    linear-gradient(#171a21 10px, transparent 10px),
+                    repeating-linear-gradient(90deg, transparent 0 7px, #171a21 7px 12px, transparent 12px 16px),
+                    repeating-linear-gradient(0deg, transparent 0 6px, #171a21 6px 10px, transparent 10px 15px);
+            background-size: 32px 32px, 32px 32px, 100% 100%, 100% 100%;
+            background-position: 0 0, 0 0, center, center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fake-qr::before,
+        .fake-qr::after {
+            content: "";
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            background: #fff;
+            border: 8px solid #171a21;
+            box-shadow: inset 0 0 0 5px #fff, inset 0 0 0 11px #171a21;
+        }
+
+        .fake-qr::before {
+            top: 0;
+            left: 0;
+        }
+
+        .fake-qr::after {
+            top: 0;
+            right: 0;
+        }
+
+        .qr-bottom-mark {
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            left: 0;
+            bottom: 0;
+            background: #fff;
+            border: 8px solid #171a21;
+            box-shadow: inset 0 0 0 5px #fff, inset 0 0 0 11px #171a21;
+        }
+
+        .qr-description {
+            color: #b8b6b4;
+            text-align: center;
+            font-size: 12px;
+            line-height: 18px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+
+        .create-account {
+            width: 540px;
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 55px 0 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .create-left {
+            text-align: center;
+            min-width: 210px;
+        }
+
+        .create-left h2 {
+            margin: 0 0 14px;
+            color: #ffffff;
+            font-size: 19.6px;
+        }
+
+        .create-button {
+            display: inline-block;
+            padding: 8px 20px;
+            color: #ffffff;
+            font-size: 14px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #06bfff, #2b74ff);
+        }
+
+        .create-button:hover {
+            filter: brightness(1.12);
+        }
+
+        .create-text {
+            width: 300px;
+            color: #c6d4df;
+            text-align: center;
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+
+        .footer {
+            background: #171a21;
+            padding: 0 0 55px;
+        }
+
+        .footer-inner {
+            width: 1352px;
+            max-width: 88%;
+            margin: auto;
+            border-top: 1px solid #363c44;
+            padding-top: 32px;
+            display: grid;
+            grid-template-columns: 1.8fr 0.9fr 0.9fr 1fr 1.1fr;
+            gap: 35px;
+        }
+
+        .footer-brand {
+            color: #8f98a0;
+            font-size: 12px;
+            line-height: 17px;
+        }
+
+        .brand-logos {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 22px;
+        }
+
+        .brand-logos img {
+            max-width: 140px;
+            max-height: 34px;
+            object-fit: contain;
+        }
+
+        .footer-column h3 {
+            margin: 0 0 17px;
+            color: #c6d4df;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .footer-column a {
+            display: block;
+            margin-bottom: 15px;
+            color: #8f98a0;
+            font-size: 13px;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 23px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #8f98a0;
+            transition: color 0.15s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        .social-links svg {
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+            .header-inner {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .steam-logo {
+                margin-right: 15px;
+                width: 110px;
+            }
+
+            .navigation {
+                gap: 12px;
+            }
+
+            .navigation a {
+                font-size: 12px;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            .login-background {
+                height: auto;
+                min-height: 660px;
+                padding: 55px 0;
+            }
+
+            .login-card {
+                gap: 22px;
+                padding: 25px;
+            }
+
+            .qr-section {
+                width: 180px;
+            }
+
+            .qr-box {
+                width: 180px;
+                height: 180px;
+            }
+
+            .real-qr {
+                width: 158px;
+                height: 158px;
+            }
+
+            .footer-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 620px) {
+            .header {
+                height: auto;
+                padding: 20px 0;
+            }
+
+            .header-inner {
+                flex-direction: column;
+            }
+
+            .steam-logo {
+                margin: 0;
+            }
+
+            .navigation {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-title {
+                font-size: 24px;
+                margin: 0 0 25px;
+            }
+
+            .login-card {
+                flex-direction: column;
+            }
+
+            .login-form,
+            .qr-section {
+                width: 100%;
+            }
+
+            .qr-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .qr-title {
+                align-self: flex-start;
+            }
+
+            .login-button {
+                max-width: 100%;
+            }
+
+            .create-account {
+                flex-direction: column;
+            }
+
+            .create-text {
+                width: 100%;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="https://store.steampowered.com/">
+            <img class="steam-logo"
+                 src="https://community.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+                 alt="Steam">
+        </a>
+
+        <nav class="navigation">
+            <a href="https://store.steampowered.com/">Магазин</a>
+            <a class="active" href="https://steamcommunity.com/">Сообщество</a>
+            <a href="https://store.steampowered.com/about/">Информация</a>
+            <a href="https://help.steampowered.com/ru/">Поддержка</a>
+        </nav>
+
+        <div class="header-right">
+            <a class="install-button" href="https://store.steampowered.com/about/">
+                <img src="https://community.fastly.steamstatic.com/public/shared/images/header/btn_header_installsteam_download.png?v=1" alt="" class="btn-icon">
+                Установить Steam
+            </a>
+            <a href="https://steamcommunity.com/login?l=russian">вход</a>
+            <span>|</span>
+            <a href="https://steamcommunity.com/login?l=russian">язык</a>
+        </div>
+    </div>
+</header>
+
+<main class="login-background">
+    <div class="login-wrap">
+        <h1 class="page-title">Вход</h1>
+
+        <section class="login-card">
+            <form class="login-form" id="loginForm" onsubmit="return false;">
+                <div class="small-title">Войдите, используя имя аккаунта</div>
+
+                <div class="field">
+                    <input type="text" id="username" aria-label="Имя аккаунта"
+                           autocomplete="off">
+                </div>
+
+                <div class="field">
+                    <label for="password">Пароль</label>
+                    <input id="password" type="password" autocomplete="off">
+                </div>
+
+                <label class="remember">
+                    <input type="checkbox" checked>
+                    <span>Запомнить меня</span>
+                </label>
+
+                <button class="login-button submit-btn" type="submit">Войти</button>
+
+                <a class="help-link"
+                   href="https://help.steampowered.com/wizard/HelpWithLogin?redir=https%3A%2F%2Fsteamcommunity.com%2Flogin%3Fl%3Drussian">
+                    Помогите, я не могу войти в аккаунт
+                </a>
+            </form>
+
+            <aside class="qr-section">
+                <div class="qr-title">Или QR-код</div>
+                <div class="qr-box">
+                    <img
+                            class="real-qr"
+                            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=SteamLogin"
+                            alt="QR-код SteamLogin">
+                </div>
+                <div class="qr-description">
+                    Используйте <a href="https://store.steampowered.com/mobile"><u>мобильное приложение Steam</u></a>,
+                    чтобы войти с помощью QR-кода
+                </div>
+            </aside>
+        </section>
+    </div>
+</main>
+
+<section class="create-account">
+    <div class="create-left">
+        <h2>Первый раз в Steam?</h2>
+        <a class="create-button create-account-btn" href="https://store.steampowered.com/join">
+            Создать аккаунт
+        </a>
+    </div>
+
+    <div class="create-text">
+        Это бесплатно и просто. Откройте для себя тысячи игр,
+        в которые можно играть с миллионами новых друзей.
+        <a href="https://store.steampowered.com/about/"><u>Узнайте больше о Steam</u></a>
+    </div>
+</section>
+
+<!-- Подвал сайта -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="brand-logos">
+                <img src="https://community.fastly.steamstatic.com/public/shared/images/responsive/header_logo.png"
+                     alt="Steam">
+                <img src="https://community.fastly.steamstatic.com/public/shared/images/responsive/footerLogo_valve_new.png"
+                     alt="Valve">
+            </div>
+
+            © 2026 Valve Corporation. Все права сохранены.<br>
+            Все торговые марки являются собственностью<br>
+            соответствующих владельцев в США и других странах.<br>
+            Все цены указаны с учетом НДС (если применимо).
+
+            <div class="social-links">
+                <!-- 1) YouTube -->
+                <a href="https://www.youtube.com/@Steam" aria-label="YouTube" title="YouTube">
+                    <svg viewBox="0 0 30 23" width="26" height="20" fill="currentColor" aria-hidden="true">
+                        <path d="M 11.9318 6.84835 V 15.7121 L 19.7727 11.2801 L 11.9318 6.84835 Z M 29.3731 18.5011 C 29.028 19.7918 28.0114 20.8083 26.7208 21.1533 C 24.3813 21.7803 14.9999 21.7803 14.9999 21.7803 C 14.9999 21.7803 5.61873 21.7803 3.27924 21.1533 C 1.98856 20.8083 0.971973 19.7918 0.626931 18.5011 C 0 16.1616 0 11.2802 0 11.2802 C 0 11.2802 0 6.3991 0.626931 4.05945 C 0.971973 2.76859 1.98843 1.7522 3.27924 1.40697 C 5.61873 0.780272 14.9999 0.780273 14.9999 0.780273 C 14.9999 0.780273 24.3813 0.780272 26.7208 1.40697 C 28.0114 1.7522 29.028 2.76859 29.3731 4.05945 C 30 6.3991 30 11.2803 30 11.2803 C 30 11.2803 30 16.1616 29.3731 18.5011 Z"/>
+                    </svg>
+                </a>
+
+                <!-- 2) Bluesky -->
+                <a href="https://bsky.app/profile/steampowered.com" aria-label="Bluesky" title="Bluesky">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+                        <path d="M 5.20232 2.04977 C 7.95386 4.13518 10.9135 8.36354 12.0001 10.6327 C 13.0868 8.3637 16.0462 4.13514 18.7978 2.04977 C 20.7832 0.545013 24 -0.619279 24 3.08556 C 24 3.82547 23.5798 9.30116 23.3333 10.1901 C 22.4767 13.2807 19.355 14.069 16.5782 13.5919 C 21.432 14.4259 22.6667 17.1884 20.0001 19.9508 C 14.9357 25.1972 12.7211 18.6345 12.1534 16.9528 C 12.0494 16.6446 12.0007 16.5003 12 16.623 C 11.9993 16.5003 11.9506 16.6446 11.8466 16.9528 C 11.2791 18.6345 9.06454 25.1974 3.99987 19.9508 C 1.33323 17.1884 2.56794 14.4257 7.42179 13.5919 C 4.64492 14.069 1.5232 13.2807 0.666658 10.1901 C 0.420196 9.30108 0 3.82538 0 3.08556 C 0 -0.619279 3.21689 0.545013 5.20218 2.04977 H 5.20232 Z"/>
+                    </svg>
+                </a>
+
+                <!-- 3) Facebook -->
+                <a href="https://facebook.com/steam" aria-label="Facebook" title="Facebook">
+                    <svg viewBox="0 0 22 22" width="26" height="26" fill="currentColor" aria-hidden="true">
+                        <path d="M 10.9998 0 C 4.92482 0 0 4.94301 0 11.0404 C 0 16.2179 3.55161 20.5625 8.34267 21.7558 V 14.4144 H 6.07452 V 11.0404 H 8.34267 V 9.58661 C 8.34267 5.82889 10.0371 4.08716 13.7128 4.08716 C 14.4097 4.08716 15.6122 4.2245 16.1041 4.3614 V 7.4196 C 15.8445 7.39221 15.3935 7.37853 14.8334 7.37853 C 13.0299 7.37853 12.333 8.06435 12.333 9.84716 V 11.0404 H 15.9259 L 15.3086 14.4144 H 12.333 V 22 C 17.7796 21.3398 22 16.6851 22 11.0404 C 21.9996 4.94301 17.0747 0 10.9998 0 Z"/>
+                    </svg>
+                </a>
+
+                <!-- 4) X -->
+                <a href="https://twitter.com/steam" aria-label="X" title="X">
+                    <svg viewBox="0 0 20 22" width="24" height="26" fill="currentColor" aria-hidden="true">
+                        <path d="M 11.9027 9.45261 L 19.3482 0.560547 H 17.5838 L 11.119 8.2814 L 5.95547 0.560547 H 0 L 7.8082 12.2358 L 0 21.5605 H 1.76443 L 8.59152 13.4071 L 14.0445 21.5605 H 20 L 11.9023 9.45261 H 11.9027 Z M 9.48608 12.3387 L 8.69495 11.1761 L 2.40018 1.92521 H 5.11025 L 10.1902 9.39099 L 10.9813 10.5536 L 17.5847 20.2579 H 14.8746 L 9.48608 12.3392 V 12.3387 Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>STEAM</h3>
+            <a href="https://store.steampowered.com/">О Steam</a>
+            <a href="https://store.steampowered.com/subscriber_agreement/">Соглашение подписчика Steam</a>
+            <a href="https://steamworks.com/">Steamworks</a>
+            <a href="https://store.steampowered.com/distribution/">Распространение в Steam</a>
+            <a href="https://store.steampowered.com/digitalgiftcards/">Подарочные карты</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>VALVE</h3>
+            <a href="https://www.valvesoftware.com/">О Valve</a>
+            <a href="https://www.valvesoftware.com/jobs">Вакансии</a>
+            <a href="https://www.valvesoftware.com/">Оборудование</a>
+            <a href="https://www.valvesoftware.com/">Переработка</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>ПРАВОВАЯ ИНФОРМАЦИЯ</h3>
+            <a href="https://store.steampowered.com/privacy_agreement/">Конфиденциальность</a>
+            <a href="https://store.steampowered.com/legal/">Доступность</a>
+            <a href="https://store.steampowered.com/legal/">Положения и политика</a>
+            <a href="https://store.steampowered.com/account/cookiepreferences/">Файлы cookie</a>
+            <a href="https://store.steampowered.com/steam_refunds/">Возврат средств</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</h3>
+            <a href="https://store.steampowered.com/about/">Установить Steam</a>
+            <a href="https://store.steampowered.com/mobile">Установить мобильное приложение</a>
+            <a href="https://help.steampowered.com/ru/">Поддержка</a>
+            <a href="https://store.steampowered.com/account/">Мой аккаунт</a>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
