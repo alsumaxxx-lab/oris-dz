@@ -1,0 +1,24 @@
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\oris.exe
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\Settings.cs
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\settings.json
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\static\Login Form\forget.html
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\static\Login Form\image\bg.jpg
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\static\Login Form\image\logo.png
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\static\Login Form\login.html
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\static\Login Form\register.html
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\static\Login Form\style.css
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\oris.deps.json
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\oris.runtimeconfig.json
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\oris.dll
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\oris.pdb
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.AssemblyInfoInputs.cache
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.AssemblyInfo.cs
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.csproj.CoreCompileInputs.cache
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.sourcelink.json
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.dll
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\refint\oris.dll
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.pdb
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\oris.genruntimeconfig.cache
+C:\Users\kamil\RiderProjects\oris\oris\obj\Debug\net10.0\ref\oris.dll
+C:\Users\kamil\RiderProjects\oris\oris\bin\Debug\net10.0\static\steam.html
