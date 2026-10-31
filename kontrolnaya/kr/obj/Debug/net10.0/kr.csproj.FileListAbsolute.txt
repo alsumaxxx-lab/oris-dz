@@ -1,0 +1,15 @@
+C:\Users\kamil\RiderProjects\kr\kr\bin\Debug\net10.0\kr.exe
+C:\Users\kamil\RiderProjects\kr\kr\bin\Debug\net10.0\kr.deps.json
+C:\Users\kamil\RiderProjects\kr\kr\bin\Debug\net10.0\kr.runtimeconfig.json
+C:\Users\kamil\RiderProjects\kr\kr\bin\Debug\net10.0\kr.dll
+C:\Users\kamil\RiderProjects\kr\kr\bin\Debug\net10.0\kr.pdb
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.AssemblyInfoInputs.cache
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.AssemblyInfo.cs
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.csproj.CoreCompileInputs.cache
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.sourcelink.json
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.dll
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\refint\kr.dll
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.pdb
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\kr.genruntimeconfig.cache
+C:\Users\kamil\RiderProjects\kr\kr\obj\Debug\net10.0\ref\kr.dll
