@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search-engine</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #171717;
+            min-height: 100vh;
+        }
+
+        .weather {
+            position: absolute;
+            top: 32px;
+            right: 16px;
+            text-align: center;
+        }
+
+        .temperature {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .city {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #7771e9;
+            font-weight: bold;
+        }
+
+        .main {
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+        .clock {
+            font-size: 46px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hello {
+            margin-top: 20px;
+            margin-bottom: 42px;
+
+            color: #716ce7;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .search {
+            width: 448px;
+            height: 48px;
+
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
+
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 18px;
+        }
+
+        .search-icon {
+            width: 17px;
+            height: 17px;
+
+            border: 2px solid #cfcfcf;
+            border-radius: 50%;
+
+            position: relative;
+            margin-right: 12px;
+        }
+
+        .search-icon::after {
+            content: "";
+
+            position: absolute;
+
+            width: 7px;
+            height: 2px;
+
+            background: #cfcfcf;
+
+            right: -5px;
+            bottom: -2px;
+
+            transform: rotate(45deg);
+        }
+
+        .search-text {
+            color: #999999;
+            font-size: 14px;
+        }
+
+
+        .sites {
+            display: flex;
+            gap: 19px;
+            margin-top: 40px;
+        }
+
+        .site-button {
+            width: 48px;
+            height: 48px;
+
+            background: white;
+            border: 1px solid #eeeeee;
+            border-radius: 13px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+
+            text-decoration: none;
+
+            transition: 0.2s;
+        }
+
+
+        .site-button img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+
+        .site-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .plus {
+            color: #c5c5c5;
+            font-size: 28px;
+            font-weight: 300;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .weather {
+                top: 20px;
+                right: 20px;
+            }
+
+            .temperature {
+                font-size: 17px;
+            }
+
+            .city {
+                font-size: 10px;
+            }
+
+            .main {
+                padding: 20px;
+            }
+
+            .clock {
+                font-size: 35px;
+            }
+
+            .hello {
+                font-size: 18px;
+                margin-top: 15px;
+                margin-bottom: 30px;
+            }
+
+            .search {
+                width: 100%;
+                max-width: 400px;
+                height: 46px;
+            }
+
+            .sites {
+                gap: 10px;
+                margin-top: 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 350px;
+            }
+
+            .site-button {
+                width: 45px;
+                height: 45px;
+            }
+
+            .site-button img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+
+        @media (max-width: 380px) {
+
+            .clock {
+                font-size: 29px;
+            }
+
+            .hello {
+                font-size: 16px;
+            }
+
+            .sites {
+                max-width: 250px;
+            }
+
+            .site-button {
+                width: 43px;
+                height: 43px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="weather">
+
+    <div class="temperature">
+        36°
+    </div>
+
+    <div class="city">
+        Ahmedabad
+    </div>
+
+</div>
+
+
+<main class="main">
+
+    <div class="clock">
+        09:11:01
+    </div>
+
+
+    <div class="hello">
+        Good Morning, Saad.
+    </div>
+
+
+    <div class="search">
+
+        <div class="search-icon"></div>
+
+        <div class="search-text">
+            Search
+        </div>
+
+    </div>
+
+
+    <div class="sites">
+
+
+        <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                class="site-button"
+                title="YouTube"
+        >
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c42ffe00-afc5-4ddd-8920-66b0d3429e04/dkzk5yd-e65305e3-3ee3-43a9-b9dd-59459cc231e7.png/v1/fill/w_512,h_512,q_80,strp/youtube_premium_mod_apk_v204746_unlocked_no_ads_by_jorgejordan33_dkzk5yd-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6Ii9mL2M0MmZmZTAwLWFmYzUtNGRkZC04OTIwLTY2YjBkMzQyOWUwNC9ka3prNXlkLWU2NTMwNWUzLTNlZTMtNDNhOS1iOWRkLTU5NDU5Y2MyMzFlNy5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.MpGl2tK6kHJsUkYQiQJ_beJ9FIJc_JhsW4PRR9b2bUQ" alt="YouTube">
+        </a>
+
+        <a
+                href="https://chatgpt.com/"
+                target="_blank"
+                class="site-button"
+                title="ChatGPT"
+        >
+            <img src="https://avatars.mds.yandex.net/i?id=75c74d21349269c8fd0d10a8ea7762c5e188d379-5886424-images-thumbs&n=13" alt="ChatGPT">
+        </a>
+
+        <a
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                class="site-button"
+                title="GeeksforGeeks"
+        >
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAJFBMVEUAAAAwj0gujEUtjUUwj0AujEYvjUYui0YvjUUui0YwikUvjUbCfSg+AAAAC3RSTlMAIGSYELvegO9CMKnIWA4AAADASURBVCjPY2AYvIBR2VgRRAsZGwmAaJbo3bu3FTAwiO7evTsdJMC6e0f27s0MjNm707p3K4B0pE5gUNtdwLY7koEpGWwGUCNj9hbtzRAmFMzenp2IYhPH1t0BUCbzbhSwAF1gAlBgJhBob+3OBFKTgQJMu4GOYrDeab0T7CagQ7s7GRicdydI7wA6yhpkt/bucOXubQJMu7cWme0G2c0OMgvIqAZS28AuE87eHe4AdK3Z7m0lEKewQF3s6DBwcQAAqR5OWSzICmQAAAAASUVORK5CYII=" alt="GeeksforGeeks">
+        </a>
+
+
+        <a
+                href="https://chat.deepseek.com/"
+                target="_blank"
+                class="site-button"
+                title="DeepSeek"
+        >
+            <img src="https://static.vecteezy.com/system/resources/previews/066/678/355/large_2x/deepseek-logo-deep-learning-isolated-illustration-free-vector.jpg" alt="DeepSeek">
+        </a>
+
+
+        <a
+                href="https://github.com/"
+                target="_blank"
+                class="site-button"
+                title="GitHub"
+        >
+            <img src="https://www.ictlayer.com/tech/github.svg" alt="GitHub">
+        </a>
+
+
+        <a
+                href="https://ru.linkedin.com/"
+                target="_blank"
+                class="site-button"
+                title="LinkedIn"
+        >
+            <img src="https://static.vecteezy.com/system/resources/previews/032/329/176/large_2x/linkedin-icon-logo-symbol-free-png.png" alt="LinkedIn">
+        </a>
+
+
+        <div
+                class="site-button plus"
+                title="Добавить сайт"
+        >
+            +
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>
