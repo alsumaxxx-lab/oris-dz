@@ -1,0 +1,7 @@
+﻿{
+  "Server": {
+    "Port": "7777",
+    "Host": "127.0.0.1",
+    "Path": "connection/"
+  }
+}
